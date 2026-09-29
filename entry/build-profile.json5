@@ -1,0 +1,34 @@
+{
+  "apiType": "stageMode",
+  // buildOption 保持空对象：本模块无 native 库、无 node worker、无资源压缩特调需求。
+  // 唯一需要落到工程里的构建档是 release（见下）。
+  "buildOption": {},
+  // release 档显式声明。
+  //
+  // 为什么要写（hvigor 的预设其实已有同样的值）：把"release 必须非 debuggable"这个约束
+  // 落到工程文件里，避免被后来的 DevEco Sync 或手改无意抹掉。实测依据：当前 debug 产物
+  // `entry/build/default/outputs/default/entry-default-signed.hap` 内含
+  // `ets/sourceMaps.map` 98,132 B（占 HAP 588,778 B 的 16.7%，`unzip -l` 实测）；
+  // 以 `-p buildMode=release` 构建即不再打包它 —— 该参数已由
+  // `scripts/build-hap-release.bat` 封装（先读该脚本再定本条，脚本内注明了 dsh-mobile 上
+  // release 化实测 492,726 → 348,776 B / -29.2%）。
+  //
+  // hvigor 内部证据（`<DevEco>/tools/hvigor/hvigor-ohos-plugin/src/project/build-option/`）：
+  //   · `build-option-util.js` 的 `getDefaultModuleBuildOpt` → release 预设 = { debuggable: false }；
+  //     `getDefaultBuildModeBuildOpt` → release 预设 = { debuggable: false }；
+  //   · `build-mode-manager.js` 的合并顺序：本文件 buildOption → target.buildOption →
+  //     buildOptionSet（按名字取对应档，release 档名就是 "release"）→ 再补预设默认值，
+  //     且默认值只做"缺项补齐"（`mergeBuildOption(默认, 已合并值)` 以已合并值为准）。
+  // 所以这里显式声明 debuggable:false 既不会覆盖、也不会丢掉任何预设值（纯显式化）。
+  "buildOptionSet": [
+    {
+      "name": "release",
+      "debuggable": false
+    }
+  ],
+  "targets": [
+    {
+      "name": "default"
+    }
+  ]
+}

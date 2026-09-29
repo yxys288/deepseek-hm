@@ -1,0 +1,108 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "bg_page",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "text_primary",
+      "value": "#1D2433"
+    },
+    {
+      "name": "text_secondary",
+      "value": "#5F6B7C"
+    },
+    {
+      "name": "card_bg",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "accent",
+      "value": "#4D6BFE"
+    },
+    {
+      "name": "chip_bg",
+      "value": "#E9EEF9"
+    },
+    {
+      "name": "line_color",
+      "value": "#E6EBF4"
+    },
+    {
+      "name": "shell_item_active_bg",
+      "value": "#E7ECF7"
+    },
+    {
+      "name": "shell_group_text",
+      "value": "#8B93A1"
+    },
+    {
+      "name": "shell_panel_shadow",
+      "value": "#26000000"
+    },
+    {
+      "name": "shell_panel_glass",
+      "value": "#40F2F2F3"
+    },
+    {
+      "name": "shell_topbar_glass",
+      "value": "#40F2F2F3"
+    },
+    {
+      "name": "shell_topbar_fade",
+      "value": "#00F2F2F3"
+    },
+    {
+      "name": "shell_danger",
+      "value": "#E5484D"
+    },
+    {
+      "name": "on_accent",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "field_bg",
+      "value": "#E5E5EA"
+    },
+    {
+      "name": "icon_btn_bg",
+      "value": "#F2F2F3"
+    },
+    {
+      "name": "icon_btn_bg_pressed",
+      "value": "#E4E5E8"
+    },
+    {
+      "name": "icon_btn_material",
+      "value": "#33F2F2F3"
+    },
+    {
+      "name": "shell_tabbar_glass",
+      "value": "#06000000"
+    },
+    {
+      "name": "shell_tabbar_rim",
+      "value": "#3D000000"
+    },
+    {
+      "name": "shell_tabbar_sheen",
+      "value": "#38FFFFFF"
+    },
+    {
+      "name": "shell_tabbar_sheen_mid",
+      "value": "#12FFFFFF"
+    },
+    {
+      "name": "shell_tabbar_sheen_clear",
+      "value": "#00FFFFFF"
+    },
+    {
+      "name": "shell_settings_page",
+      "value": "#F1F3F5"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "module": {
+    "name": "entry",
+    "type": "entry",
+    "description": "$string:module_desc",
+    "mainElement": "EntryAbility",
+    "deviceTypes": [
+      "phone",
+      "tablet"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    // 官方沉浸材质（沉浸光感）总开关。
+    //
+    // ⚠️ **值必须小写 enable**：写成大写（如 ENABLE）会被**静默忽略** ——
+    //    探针读到的 state 仍是 0(DEFAULT)，而构建、运行都不报任何错（内部踩坑表 §3.0-2）。
+    //
+    // ## 为什么由 disable 改成 enable（参考 aa-hm）
+    // aa-hm 在同版本 SDK（compatibleSdkVersion / targetSdkVersion = 26.0.0）上的 A/B 实测：
+    //   无 metadata → 探针 supported=true state=0(DEFAULT) level=0(EXQUISITE)
+    //   有 metadata → 探针 supported=true state=1(ENABLE)  level=0(EXQUISITE)
+    // 即这一行只是「应用级」闸门，只开它不给任何组件画材质；真正的绘制由各挂载点的
+    // .systemMaterial(...) / NavigationTitleOptions.systemMaterial 决定。
+    // 依据见 aa-hm/entry/src/main/module.json5 与
+    // aa-hm/内部验证记录 §0-H。
+    //
+    // ## 生效范围（HarmonyOS 7 起，仅对 targetSdkVersion >= 26.0.0 生效）
+    // 弹窗类组件/接口（AlertDialog / ActionSheet / CustomDialog / 各 Picker / bindPopup /
+    // bindSheet / PromptAction / 半模态）与 Slider / Toggle / Select 仍可在页面内全部区域生效；
+    // **其他组件仅在 Navigation / NavDestination 标题栏、或横向 Tabs 且
+    // barPosition = BarPosition.End 的底部 TabBar 中生效；在其他区域设置沉浸光感不生效**
+    // （不报错、不告警，静默无效）—— 内部踩坑表 §3.0-245。
+    // ⇒ 本工程顶栏改走 Navigation 标题栏才有意义；侧栏面板（页面正文）**不得**挂材质。
+    "metadata": [
+      {
+        "name": "ohos.arkui.UIMaterial.state",
+        "value": "enable"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:icon",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ]
+      }
+    ],
+    "extensionAbilities": [
+      {
+        "name": "EntryFormAbility",
+        "srcEntry": "./ets/entryformability/EntryFormAbility.ets",
+        "label": "$string:EntryFormAbility_label",
+        "description": "$string:EntryFormAbility_desc",
+        "type": "form",
+        "metadata": [
+          {
+            "name": "ohos.extension.form",
+            "resource": "$profile:form_config"
+          }
+        ]
+      }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
+      }
+    ]
+  }
+}

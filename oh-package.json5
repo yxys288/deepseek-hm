@@ -1,0 +1,10 @@
+{
+  "modelVersion": "5.0.0",
+  "name": "deepseek_hm",
+  "version": "1.0.0",
+  "description": "DeepSeek 网页端 HarmonyOS 客户端（ArkWeb 容器 + 沉浸光感）",
+  "main": "",
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {}
+}

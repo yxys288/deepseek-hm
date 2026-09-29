@@ -1,0 +1,32 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "DeepSeek 鸿蒙端模块"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "DeepSeek 网页端鸿蒙客户端"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "DeepSeek"
+    },
+    {
+      "name": "EntryFormAbility_label",
+      "value": "DeepSeek 快捷对话"
+    },
+    {
+      "name": "EntryFormAbility_desc",
+      "value": "桌面卡片一键开启 DeepSeek 对话"
+    },
+    {
+      "name": "form_quick_name",
+      "value": "DeepSeek 快捷对话"
+    },
+    {
+      "name": "form_quick_desc",
+      "value": "点击卡片直接开始新的 DeepSeek 对话"
+    }
+  ]
+}

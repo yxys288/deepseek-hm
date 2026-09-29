@@ -1,0 +1,19 @@
+{
+  "forms": [
+    {
+      "name": "DeepSeekQuick",
+      "displayName": "$string:form_quick_name",
+      "description": "$string:form_quick_desc",
+      "src": "./ets/widget/pages/WidgetCard.ets",
+      "uiSyntax": "arkts",
+      "isDefault": false,
+      "updateEnabled": false,
+      "defaultDimension": "2*2",
+      "supportDimensions": [
+        "2*2",
+        "2*4",
+        "4*4"
+      ]
+    }
+  ]
+}

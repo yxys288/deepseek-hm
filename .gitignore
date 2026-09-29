@@ -1,0 +1,19 @@
+# DevEco / hvigor 缓存与构建产物
+/.idea
+/.hvigor
+**/build
+/.clangd
+/.cxx
+**/.cxx
+/oh_modules
+**/oh_modules
+/node_modules
+local.properties
+*.log
+*.hap
+*.hsp
+*.har
+# 协作工具的工作目录（不属于工程产物，不进版本库）
+.workbuddy/
+# 图标生成脚本的临时 profile
+iconwork/.tmp-shot/

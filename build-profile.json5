@@ -1,0 +1,51 @@
+{
+  "app": {
+    // ⚠️ 开源版本已移除 signingConfigs：原文件含本机自动签名的密钥库/证书绝对路径与加密口令，
+    //    属个人凭据，不得入库。
+    //
+    // 首次打开本工程请自行生成签名：
+    //   DevEco Studio → File → Project Structure → Signing Configs
+    //   → 勾选 "Automatically generate signature"（需登录华为开发者账号）
+    //   → DevEco 会自动补回 signingConfigs，并把 products[0].signingConfig 指向 "default"。
+    //
+    // ⚠️ products[0] 必须引用签名配置（默认名 "default"），否则 Run/Build 会报
+    //    "No signingConfig found for product default"。本文件（开源版）刻意不写该引用，
+    //    以保持「没有签名材料也能 Sync / 编译」；自动签名生成后由 DevEco 写入。
+    "products": [
+      {
+        "name": "default",
+        "compatibleSdkVersion": "26.0.0",
+        "targetSdkVersion": "26.0.0",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug"
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
