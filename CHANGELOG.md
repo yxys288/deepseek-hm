@@ -1821,3 +1821,14 @@ hdc -t DEVICE_SN_REDACTED shell hidumper -s WindowManagerService    # 窗口 [0 
 | 底栏完整不裁 | ✅（dump：bar 项 `[0,2702][321,2832]` 等四项等分） | 同上 |
 
 **产物**：clean 全量 `0 error / 0 warning`；release 见下方门禁记录；已装真机。
+
+---
+
+## 第二十二轮（2026-09-29）：开源发布
+
+- **首次公开**：仓库内容 = 源码（`entry/`、`AppScope/`、`hvigor/`）+ 文档（`README`、`PROJECT`、`CHANGELOG`、`EXPERIENCE`、`specs/`）+ 图标素材；
+- **脱敏**：移除签名配置（密钥库路径与口令）、测试设备序列号、本机绝对路径；开发期的验证证据目录与协作目录不随仓库发布；
+  文档中指向工作区的相对链接已拆成纯文本，避免死链；
+- 新增 `README.md`（含「开发者模式侧载安装」专章）、`LICENSE`（Apache-2.0）、`NOTICE.md`（非官方客户端与商标声明）、`.gitattributes`；
+- 验证：`hvigorw --mode module -p product=default -p buildMode=debug assembleHap` → **BUILD SUCCESSFUL / 0 warning**，
+  产物 `entry-default-unsigned.hap` 830,285 B（未签名）；**未做真机安装验证** —— 装机需自行在 DevEco 配置签名后按 README 侧载。
